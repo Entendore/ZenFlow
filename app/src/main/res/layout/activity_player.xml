@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/navy" android:fillViewport="true" android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+        <ImageButton android:id="@+id/btnBack"
+            android:layout_width="44dp" android:layout_height="44dp"
+            android:layout_marginStart="12dp" android:layout_marginTop="12dp"
+            android:background="@drawable/bg_icon_chip" android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:tint="#C9CBEE" />
+
+        <TextView android:id="@+id/tvTitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="60dp" android:textColor="#FFFFFF"
+            android:textSize="22sp" android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:text="@string/player_subtitle"
+            android:textColor="#8F93BE" android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <ProgressBar android:id="@+id/progressRing"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="260dp" android:layout_height="260dp"
+            android:layout_marginTop="20dp" android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_ring"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+
+        <TextView android:id="@+id/tvTimeRemaining"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:letterSpacing="0.03" android:text="00:00"
+            android:textColor="#FFFFFF" android:textSize="44sp" android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/progressRing"
+            app:layout_constraintEnd_toEndOf="@id/progressRing"
+            app:layout_constraintStart_toStartOf="@id/progressRing"
+            app:layout_constraintTop_toTopOf="@id/progressRing"
+            app:layout_constraintVertical_bias="0.44" />
+
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" android:letterSpacing="0.2"
+            android:text="@string/remaining" android:textColor="#8F93BE" android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/progressRing"
+            app:layout_constraintStart_toStartOf="@id/progressRing"
+            app:layout_constraintTop_toBottomOf="@id/tvTimeRemaining" />
+
+        <LinearLayout android:id="@+id/playerControls"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressRing">
+
+            <ImageButton android:id="@+id/btnReset"
+                android:layout_width="52dp" android:layout_height="52dp"
+                android:background="@drawable/bg_icon_chip" android:contentDescription="@string/cd_restart"
+                android:padding="14dp" android:src="@drawable/ic_reset" app:tint="#C9CBEE" />
+
+            <ImageButton android:id="@+id/btnPlayPause"
+                android:layout_width="76dp" android:layout_height="76dp"
+                android:layout_marginStart="28dp" android:background="@drawable/bg_play_gradient"
+                android:contentDescription="@string/cd_play_pause" android:elevation="8dp"
+                android:padding="24dp" android:src="@drawable/ic_play" />
+        </LinearLayout>
+
+        <HorizontalScrollView android:id="@+id/soundScroller"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:clipToPadding="false"
+            android:paddingStart="24dp" android:paddingEnd="24dp" android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playerControls">
+
+            <LinearLayout android:id="@+id/soundChipRow"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <LinearLayout android:id="@+id/soundPanelCard"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginStart="20dp" android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp" android:background="@drawable/bg_panel"
+            android:orientation="vertical" android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/soundScroller">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="2dp" android:letterSpacing="0.12"
+                android:text="@string/presets_header"
+                android:textColor="#8F93BE" android:textSize="11sp" android:textStyle="bold" />
+
+            <HorizontalScrollView android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="6dp"
+                android:scrollbars="none">
+                <LinearLayout android:id="@+id/presetChipRow"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:layout_marginTop="12dp" android:layout_marginBottom="10dp"
+                android:background="#22FFFFFF" />
+
+            <LinearLayout android:id="@+id/mixerPanel"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="2dp" android:letterSpacing="0.12"
+                android:text="@string/master_volume_header"
+                android:textColor="#8F93BE" android:textSize="11sp" android:textStyle="bold" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="112dp" android:layout_height="wrap_content"
+                    android:text="@string/master_label" android:textColor="#C9CBEE" android:textSize="13sp" />
+                <com.google.android.material.slider.Slider android:id="@+id/masterSlider"
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:layout_marginTop="12dp" android:layout_marginBottom="12dp"
+                android:background="#22FFFFFF" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:letterSpacing="0.12" android:text="@string/sleep_timer_header"
+                android:textColor="#8F93BE" android:textSize="11sp" android:textStyle="bold" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:gravity="center_vertical" android:orientation="horizontal">
+                <TextView android:layout_width="112dp" android:layout_height="wrap_content"
+                    android:text="@string/sleep_label" android:textColor="#C9CBEE" android:textSize="13sp" />
+                <HorizontalScrollView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:scrollbars="none">
+                    <LinearLayout android:id="@+id/sleepChipRow"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvStatus"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="14dp" android:text="@string/status_ready"
+            android:textColor="#8F93BE" android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/soundPanelCard" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
