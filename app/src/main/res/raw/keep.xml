@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CRITICAL: sounds are resolved via getIdentifier at runtime; without this
+     the resource shrinker would strip every res/raw clip from release builds. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@raw/*" />

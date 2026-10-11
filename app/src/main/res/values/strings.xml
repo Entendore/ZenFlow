@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ZenFlow</string>
+
+    <!-- Home -->
+    <string name="offline_badge">✈️ Offline</string>
+    <string name="section_meditations">Meditations</string>
+    <string name="history_link">History →</string>
+    <string name="stat_minutes">minutes</string>
+    <string name="stat_sessions">sessions</string>
+    <string name="stat_streak">day streak</string>
+    <string name="week_label">This week</string>
+    <string name="week_total_fmt">%1$d min</string>
+    <string name="daily_label">💭 TODAY\u2019S CONTEMPLATION</string>
+    <string name="daily_explore">Explore →</string>
+    <string name="reminder_card_title">Daily reminder</string>
+    <string name="reminder_off">Off</string>
+    <string name="reminder_every_day_at">Every day at %1$s</string>
+    <string name="breathing_card_title">Breathing Exercise</string>
+    <string name="breathing_card_sub">Patterns · haptics · timed sessions</string>
+    <string name="begin">Begin →</string>
+    <string name="greeting_morning">Good morning 🌅</string>
+    <string name="greeting_afternoon">Good afternoon ☀️</string>
+    <string name="greeting_evening">Good evening 🌙</string>
+    <string name="version_toast">ZenFlow %1$s · fully offline · nothing leaves this device</string>
+    <string name="onboarding_title">Welcome to ZenFlow 🌿</string>
+    <string name="onboarding_msg">Everything works offline and stays on your device.\n\nStart with the 🌙 Deep Sleep wind-down?</string>
+    <string name="onboarding_start">Start</string>
+    <string name="onboarding_explore">Explore on my own</string>
+
+    <!-- Player -->
+    <string name="player_subtitle">Find a comfortable position</string>
+    <string name="remaining">REMAINING</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_restart">Restart</string>
+    <string name="cd_play_pause">Play or pause</string>
+    <string name="presets_header">PRESETS</string>
+    <string name="master_volume_header">MASTER VOLUME</string>
+    <string name="sleep_timer_header">SLEEP TIMER</string>
+    <string name="master_label">🔊 Master</string>
+    <string name="sleep_label">🌙 Sleep</string>
+    <string name="chip_off">Off</string>
+    <string name="chip_minutes_fmt">%1$d min</string>
+    <string name="status_ready">Ready when you are</string>
+    <string name="status_paused">Paused</string>
+    <string name="status_silence">Playing in silence</string>
+    <string name="status_playing_one">%1$s playing 🎧</string>
+    <string name="status_mixing_n">Mixing %1$d sounds 🎧</string>
+    <string name="status_session_complete">Session complete 🎉</string>
+    <string name="status_session_complete_sleep">Session complete — sound continues 🌙</string>
+    <string name="status_fading_fmt">Fading out — %1$d:%2$02d left 🌙</string>
+    <string name="status_sleep_finished">Sleep timer finished — sound off 🌙</string>
+    <string name="status_sound_paused">Sound paused</string>
+    <string name="status_sound_on">Sound on 🎧</string>
+    <string name="status_removed">%1$s removed from the mix</string>
+    <string name="status_added">%1$s added — use its slider to balance</string>
+    <string name="status_preset_applied">%1$s applied 🎧</string>
+    <string name="toast_cap">Up to %1$d sounds mix at once</string>
+    <string name="toast_no_clips">Add %1$s_01.mp3 … %1$s_20.mp3 (or one %1$s.mp3) to res/raw</string>
+    <string name="dialog_well_done">Well done 🌟</string>
+    <string name="dialog_see_you">\n\nSee you tomorrow?</string>
+    <string name="dialog_how_feel">How do you feel?</string>
+    <string name="dialog_note_hint">One line about this session (optional)</string>
+    <string name="btn_finish">Finish</string>
+    <string name="btn_keep_sitting">Keep sitting</string>
+    <string name="contemplation_title">💭 Hold this in mind</string>
+    <string name="btn_another">Another 🔀</string>
+    <string name="btn_close">Close</string>
+    <string name="milestone_fmt">%1$s  Milestone — %2$s!</string>
+    <string name="cd_remove_from_mix">Remove %1$s from the mix</string>
+    <string name="cd_library">Sound library</string>
+    <string name="cd_contemplate">Contemplations</string>
+    <string name="sleep_scheduled_fmt">After your session, sound fades out over %1$d min 🌙</string>
+    <string name="sleep_off">Sleep timer off</string>
+    <string name="sleep_off_playing">Sleep timer off — sound keeps playing 🎧</string>
+    <string name="sleep_set_when_resume">Sleep timer set — fading starts when the sound resumes 🌙</string>
+    <string name="sleep_fading_in_fmt">Sleep timer: fading out in %1$d min 🌙</string>
+
+    <plurals name="session_minutes">
+        <item quantity="one">You meditated for %1$d minute.</item>
+        <item quantity="other">You meditated for %1$d minutes.</item>
+    </plurals>
+
+    <!-- Breathing -->
+    <string name="breathing_title">Breathing Exercise</string>
+    <string name="breathing_hint">Follow the circle — in through your nose, out through your mouth</string>
+    <string name="cd_toggle_sounds">Toggle sounds</string>
+    <string name="cd_toggle_haptics">Toggle haptic cues</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_stop">Stop</string>
+    <string name="cycles_fmt">Cycles: %1$d</string>
+    <string name="breath_done">Well done ✨</string>
+    <string name="breath_ready">Ready?</string>
+    <string name="session_left_fmt">⏳ %1$d:%2$02d left</string>
+    <string name="finishing_breath">⏳ Finishing this breath…</string>
+    <string name="builder_title">Custom pattern 🛠️</string>
+    <string name="builder_need_io">Inhale and exhale need at least 1 s</string>
+
+    <!-- History -->
+    <string name="history_title">History</string>
+    <string name="history_empty">No sessions yet 🧘\nYour practice will appear here</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="in_silence">In silence</string>
+
+    <!-- Sound Library -->
+    <string name="library_title">Sound Library</string>
+    <string name="library_indexing">Indexing sound database…</string>
+    <string name="library_empty_index">No sounds indexed yet</string>
+    <string name="library_files_fmt">%1$d files in the sound database</string>
+    <string name="btn_repair">Verify &amp; repair</string>
+    <string name="repair_done">Repaired: %1$s</string>
+    <string name="repair_failed">Check failed — try again</string>
+    <string name="library_import">＋ Import</string>
+    <string name="cd_import">Import audio file</string>
+    <string name="import_done">%1$s imported 🎧</string>
+    <string name="import_failed">Import failed: %1$s</string>
+    <string name="import_deleted">%1$s deleted</string>
+    <string name="delete_import_title">Delete “%1$s”?</string>
+    <string name="delete_import_msg">The imported audio file will be removed from your device.</string>
+    <string name="btn_delete">Delete</string>
+    <string name="library_imported_sub">Imported · %1$s · %2$s</string>
+    <string name="cd_preview">Preview</string>
+
+    <!-- Contemplations -->
+    <string name="contemplations_title">Contemplations</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="no_favorites">No favorites yet</string>
+    <string name="no_favorites_hint">Tap the heart on any card to keep it here</string>
+    <string name="btn_next_card">Another →</string>
+    <string name="cd_favorite">Favorite</string>
+    <string name="cd_open">Open</string>
+
+    <!-- Reminder worker -->
+    <string name="notif_channel_name">Daily reminder</string>
+    <string name="notif_channel_desc">A gentle nudge to practice</string>
+    <string name="notif_title">Time to slow down 🧘</string>
+    <string name="notif_text">A few quiet minutes are waiting for you.</string>
+</resources>

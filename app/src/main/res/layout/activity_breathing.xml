@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_breathing">
+
+    <ImageButton android:id="@+id/btnBack"
+        android:layout_width="44dp" android:layout_height="44dp"
+        android:layout_marginStart="12dp" android:layout_marginTop="12dp"
+        android:background="@drawable/bg_icon_chip" android:contentDescription="@string/cd_back"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+        app:tint="#B9C4E8" />
+
+    <ImageButton android:id="@+id/btnHapticToggle"
+        android:layout_width="44dp" android:layout_height="44dp"
+        android:layout_marginTop="12dp" android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_icon_chip" android:contentDescription="@string/cd_toggle_haptics"
+        android:src="@drawable/ic_haptic"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+        app:tint="#B9C4E8" />
+
+    <ImageButton android:id="@+id/btnSoundToggle"
+        android:layout_width="44dp" android:layout_height="44dp"
+        android:layout_marginTop="12dp" android:layout_marginEnd="6dp"
+        android:background="@drawable/bg_icon_chip" android:contentDescription="@string/cd_toggle_sounds"
+        android:src="@drawable/ic_sound_on"
+        app:layout_constraintEnd_toStartOf="@id/btnHapticToggle"
+        app:layout_constraintTop_toTopOf="parent" app:tint="#B9C4E8" />
+
+    <TextView android:id="@+id/tvHeading"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="56dp" android:text="@string/breathing_title"
+        android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView android:id="@+id/tvHint"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:gravity="center"
+        android:paddingStart="32dp" android:paddingEnd="32dp"
+        android:text="@string/breathing_hint" android:textColor="#C2CBEF" android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeading" />
+
+    <HorizontalScrollView android:id="@+id/patternChipRow"
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" android:clipToPadding="false"
+        android:paddingStart="24dp" android:paddingEnd="24dp" android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHint">
+
+        <LinearLayout android:id="@+id/patternChips"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <FrameLayout android:id="@+id/circleContainer"
+        android:layout_width="340dp" android:layout_height="340dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patternChipRow">
+
+        <View android:layout_width="316dp" android:layout_height="316dp"
+            android:layout_gravity="center" android:alpha="0.5"
+            android:background="@drawable/bg_breath_ring" />
+        <View android:layout_width="262dp" android:layout_height="262dp"
+            android:layout_gravity="center" android:background="@drawable/bg_breath_ring" />
+        <View android:id="@+id/breathCircle"
+            android:layout_width="190dp" android:layout_height="190dp"
+            android:layout_gravity="center" android:background="@drawable/bg_breathing_circle" />
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center" android:gravity="center" android:orientation="vertical">
+            <TextView android:id="@+id/tvPhase"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/breath_ready" android:textColor="#FFFFFF"
+                android:textSize="24sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvSeconds"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="6dp" android:textColor="#D9DEF7" android:textSize="16sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView android:id="@+id/tvCycles"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" android:text="@string/cycles_fmt"
+        android:textColor="#C2CBEF" android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/circleContainer" />
+
+    <TextView android:id="@+id/tvLegend"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textColor="#8F93BE" android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCycles" />
+
+    <TextView android:id="@+id/tvSessionTimer"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:textColor="#FFD9A0"
+        android:textSize="13sp" android:textStyle="bold" android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLegend" />
+
+    <HorizontalScrollView android:id="@+id/durationChipRow"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSessionTimer">
+
+        <LinearLayout android:id="@+id/durationChips"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <com.google.android.material.button.MaterialButton android:id="@+id/btnToggleBreathing"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp" android:minWidth="170dp" android:minHeight="52dp"
+        android:paddingStart="32dp" android:paddingEnd="32dp" android:text="@string/btn_start"
+        android:textColor="#FFFFFF" android:textSize="16sp" android:textStyle="bold"
+        app:backgroundTint="#33FFFFFF" app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

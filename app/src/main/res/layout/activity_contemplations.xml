@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <View android:id="@+id/bgA"
+        android:layout_width="match_parent" android:layout_height="match_parent" />
+    <View android:id="@+id/bgB"
+        android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <ImageButton android:id="@+id/btnBack"
+            android:layout_width="44dp" android:layout_height="44dp"
+            android:layout_marginStart="12dp" android:layout_marginTop="12dp"
+            android:background="@drawable/bg_icon_chip" android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:tint="#D9DEF7" />
+
+        <TextView android:id="@+id/tvHeading"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="56dp" android:text="@string/contemplations_title"
+            android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView android:id="@+id/chipScroller"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" android:clipToPadding="false"
+            android:paddingStart="24dp" android:paddingEnd="24dp" android:scrollbars="none"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeading">
+
+            <LinearLayout android:id="@+id/categoryChips"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <LinearLayout android:id="@+id/contentBox"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginStart="28dp" android:layout_marginEnd="28dp"
+            android:gravity="center" android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/tvCounter"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chipScroller"
+            app:layout_constraintVertical_bias="0.5">
+
+            <TextView android:id="@+id/tvEmoji"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="30sp" />
+
+            <TextView android:id="@+id/tvText"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="18dp" android:fontFamily="serif"
+                android:gravity="center" android:lineSpacingExtra="6dp"
+                android:textColor="#FFFFFF" android:textSize="21sp" />
+
+            <TextView android:id="@+id/tvSub"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:gravity="center"
+                android:lineSpacingExtra="3dp" android:textColor="#D9DEF7" android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvCounter"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp" android:textColor="#88FFFFFF" android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@id/bottomBar"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout android:id="@+id/bottomBar"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp" android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent">
+
+            <TextView android:id="@+id/btnFav"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:background="@drawable/bg_chip" android:contentDescription="@string/cd_favorite"
+                android:paddingStart="16dp" android:paddingTop="8dp"
+                android:paddingEnd="16dp" android:paddingBottom="8dp"
+                android:text="🤍" android:textSize="18sp" />
+
+            <TextView android:id="@+id/btnNext"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="12dp" android:background="@drawable/bg_chip_selected"
+                android:paddingStart="22dp" android:paddingTop="12dp"
+                android:paddingEnd="22dp" android:paddingBottom="12dp"
+                android:text="@string/btn_next_card" android:textColor="#FFFFFF"
+                android:textSize="14sp" android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
